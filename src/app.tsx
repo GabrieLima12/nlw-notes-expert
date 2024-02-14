@@ -55,7 +55,7 @@ export function App() {
   };
 
   const filteredNotes = search !== '' 
-    ? notes.filter(note => note.content.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+    ? notes.filter(note => note.content.toLocaleLowerCase().includes(search.toLocaleLowerCase()) || note.noteTitle.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
     : notes;
 
   return (
