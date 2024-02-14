@@ -23,7 +23,6 @@ function download(content: string, noteTitle: string, type: string): void {
   a.href = url;
   a.download = noteTitle;
   a.click();
-  console.log(url)
   URL.revokeObjectURL(url);
 }
 

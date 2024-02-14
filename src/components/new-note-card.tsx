@@ -41,7 +41,7 @@ export function NewNoteCard( { onNoteCreated } : NewNoteCardProps ) {
   function handleSaveNote(event: FormEvent) {
     event.preventDefault();
     const trimmedContent = content.trim();
-    const trimmedNoteTitle = content.trim();
+    const trimmedNoteTitle = noteTitle.trim();
 
     if (trimmedContent === '' || trimmedNoteTitle === '') return;
 
@@ -138,7 +138,7 @@ export function NewNoteCard( { onNoteCreated } : NewNoteCardProps ) {
                   Comece <button type="button" onClick={handleStartRecording} className="font-medium text-lime-400 hover:underline">gravando uma nota</button> em audio em audio ou se prefirir <button type="button" onClick={handleStartEditor} className="font-medium text-lime-400 hover:underline">utilize apenas texto</button>.
                 </p>
               ) : (
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col flex-grow gap-3">
                   <input 
                     type="text" 
                     className="w-full bg-transparent text-2xl font-semibold tracking-tight placeholder:text-slate-400 outline-none"
@@ -146,16 +146,16 @@ export function NewNoteCard( { onNoteCreated } : NewNoteCardProps ) {
                     value={noteTitle}
                     onChange={handleNoteTitle}
                   />
-                 <textarea 
-                  autoFocus
-                  placeholder="Digite o conteúdo da nota..."
-                  className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
-                  value={content}
-                  onChange={handleContentChange}
+                  <textarea 
+                    autoFocus
+                    placeholder="Digite o conteúdo da nota..."
+                    className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
+                    value={content}
+                    onChange={handleContentChange}
                   >
                   </textarea>
                 </div>
-                
+                 
               )}
             </div>
 
