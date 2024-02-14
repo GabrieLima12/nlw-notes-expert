@@ -39,12 +39,14 @@ export function NewNoteCard( { onNoteCreated } : NewNoteCardProps ) {
   }
 
   function handleSaveNote(event: FormEvent) {
-    event.preventDefault()
-    
-    if (content === '' || noteTitle === '') return;
+    event.preventDefault();
+    const trimmedContent = content.trim();
+    const trimmedNoteTitle = content.trim();
 
-    onNoteCreated(content, noteTitle);
-    toast.success("Nota criada com sucesso!")
+    if (trimmedContent === '' || trimmedNoteTitle === '') return;
+
+    onNoteCreated(trimmedContent, trimmedNoteTitle);
+    toast.success("Nota criada com sucesso!");
 
     setShouldShowOnboarding(true);
     setContent('');
