@@ -48,8 +48,6 @@ export function NoteCard( { note, onNoteDeleted } : NoteCardProps ) {
               addSuffix: true
             })}
           </span>
-          
-          
 
           <div className="flex gap-2" >
             <Dialog.Trigger>
@@ -75,7 +73,6 @@ export function NoteCard( { note, onNoteDeleted } : NoteCardProps ) {
               </DropdownMenu.Portal>
             </DropdownMenu.Root>
           </div>
-
         </div>
 
         <h3>
