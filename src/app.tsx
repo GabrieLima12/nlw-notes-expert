@@ -6,6 +6,7 @@ import { NoteCard } from './components/note-card'
 interface Note {
   id: string;
   date: Date;
+  noteTitle: string;
   content: string;
 }
 
@@ -22,10 +23,11 @@ export function App() {
     return []
   });
 
-  function onNoteCreated(content: string) {
+  function onNoteCreated(content: string, noteTitle: string) {
     const newNote = {
       id: crypto.randomUUID(),
       date: new Date(),
+      noteTitle,
       content,
     };
 
